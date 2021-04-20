@@ -5,9 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.em.entites.Employee;
 import com.em.entites.Manager;
@@ -26,6 +28,7 @@ public class EmpManagementServiceImpl implements EmpManagementService {
 	private EmployeeRepositories empRepo;
 	
 	@Override
+	@Transactional(readOnly = false)
 	public String saveManager(ManagerModel managerModel) {
 		Manager manager=new Manager();
 		String msg=null;
@@ -65,6 +68,7 @@ public class EmpManagementServiceImpl implements EmpManagementService {
 	}
 	
 	@Override
+	@Transactional(readOnly = false)
 	public String saveEmp(EmployeeModel employeeModel) {
 		String msg=null;
 		Employee employee=new Employee();
@@ -90,6 +94,7 @@ public class EmpManagementServiceImpl implements EmpManagementService {
 			
 	}
 	
+	@Transactional(readOnly = false)
 	public String updateEmp(int empId, EmployeeModel employee) {
 		String msg=null;
 		Employee emp=empRepo.findByEmpId(empId);
@@ -109,6 +114,7 @@ public class EmpManagementServiceImpl implements EmpManagementService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public String deleteEmployee(int empId) {
 		String msg=null;
 		empRepo.deleteById(empId);
