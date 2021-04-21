@@ -6,6 +6,6 @@ spring:  datasource:    driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
   #jpa:
    # show-sql: true   # generate-ddl: true
-  mvc:    view:      prefix: WEB-INF/views/
+  mvc:    view:      prefix: /WEB-INF/views/
       suffix: .jsp
       

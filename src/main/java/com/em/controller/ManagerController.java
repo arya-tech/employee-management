@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.em.model.ManagerModel;
 import com.em.service.EmpManagementService;
-
+import com.em.form.ManagerLoginForm;
 @RestController
 @RequestMapping("/manager")
 public class ManagerController {
@@ -25,7 +24,7 @@ public class ManagerController {
 	@GetMapping(value = "/loadForm")
 	public String loadForm(Model model) {
 		model.addAttribute("manager", new ManagerModel());
-		return "manager-reg-form";
+		return "manager-reg-form";// return the empty form to the user
 	}
 	
 	
@@ -42,6 +41,14 @@ public class ManagerController {
 		}
 		
 	}
+	
+	
+	@GetMapping("/login")
+	public String loginForm(Model model) {
+		model.addAttribute("managerLogin", new ManagerLoginForm());
+		return "home";
+	}
+	
 	
 	@GetMapping("/loginCheck/{emailId}/{password}")
 	public ResponseEntity<String> loginCheck(@PathVariable("emailId") String emailId, @PathVariable("password") String password) {

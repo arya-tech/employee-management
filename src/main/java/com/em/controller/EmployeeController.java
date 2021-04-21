@@ -38,9 +38,6 @@ public class EmployeeController {
 		String msg=null;
 		List<EmployeeModel> empModelList=new ArrayList<>();
 		empModelList=empManagementService.fetchAllEmpDetails();
-		for(EmployeeModel empModel:empModelList) {
-			System.out.println(empModel);
-		}
 		return new ResponseEntity<List<EmployeeModel>>(empModelList,HttpStatus.OK);
 	}
 	
@@ -58,8 +55,5 @@ public class EmployeeController {
 		String msg = empManagementService.deleteEmployee(empId);
 		return new ResponseEntity<>(msg, HttpStatus.OK);
 	}
-	
-	
-	
 
 }

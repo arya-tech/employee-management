@@ -3,22 +3,12 @@ package com.em.model;
 import java.util.Date;
 
 public class EmployeeModel {
-	private int empId;
 	private String firstName;
 	private String lastName;
 	private String address;
 	private Date dob;
 	private String mobileNo;
 	private String city;
-	
-	
-	
-	public int getEmpId() {
-		return empId;
-	}
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -57,8 +47,8 @@ public class EmployeeModel {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeModel [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
-				+ address + ", dob=" + dob + ", mobileNo=" + mobileNo + ", city=" + city + "]";
+		return "EmployeeModel [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", dob="
+				+ dob + ", mobileNo=" + mobileNo + ", city=" + city + "]";
 	}
 	
 }

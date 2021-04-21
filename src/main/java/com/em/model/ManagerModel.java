@@ -2,9 +2,7 @@ package com.em.model;
 
 import java.util.Date;
 
-
 public class ManagerModel {
-	private int managerId;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -12,14 +10,6 @@ public class ManagerModel {
 	private Date dob;
 	private String company;
 	
-	
-	
-	public int getManagerId() {
-		return managerId;
-	}
-	public void setManagerId(int managerId) {
-		this.managerId = managerId;
-	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -58,8 +48,9 @@ public class ManagerModel {
 	}
 	@Override
 	public String toString() {
-		return "ManagerModel [managerId=" + managerId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + email + ", password=" + password + ", dob=" + dob + ", company=" + company + "]";
+		return "ManagerModel [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + ", dob=" + dob + ", company=" + company + "]";
 	}
+	
 	
 }
